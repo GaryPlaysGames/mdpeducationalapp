@@ -98,7 +98,7 @@ public class DestroyTrash : MonoBehaviour
             }
             if (showTimer >= timeToShowLogic)
             {
-                Game.SetActive(false);
+                //Game.SetActive(false);
                 switch (camera.GetComponent<GrabTrash>().phase)
                 {
                     case 1:
@@ -112,7 +112,7 @@ public class DestroyTrash : MonoBehaviour
                         break;
                     case 3:
                     case 6:
-                        StartCoroutine(ShowCompostPrompt());
+                        //StartCoroutine(ShowCompostPrompt());
                         break;
                 }
             }
@@ -377,6 +377,7 @@ public class DestroyTrash : MonoBehaviour
         helpNumber.GetComponent<SpriteRenderer>().sprite = helpNumber1;
 
         objectsToToss[0].gameObject.transform.position = new Vector3(-4f, 0, 0);
+        objectsToToss[0].gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         objectsToToss[0].SetActive(true);
         objectsToToss[1].SetActive(false);
         objectsToToss[2].SetActive(false);
@@ -384,6 +385,10 @@ public class DestroyTrash : MonoBehaviour
         circle1 = false;
         circle2 = false;
         circle3 = false;
+        camera.GetComponent<GrabTrash>().circle1Hit = false;
+        camera.GetComponent<GrabTrash>().circle2Hit = false;
+        camera.GetComponent<GrabTrash>().circle3Hit = false;
+        camera.GetComponent<GrabTrash>().dragging = false;
         gamePaused = false;
         if (playHelpSound)
         {
@@ -425,8 +430,10 @@ public class DestroyTrash : MonoBehaviour
         helpHand.GetComponent<SpriteRenderer>().sprite = helpHand2;
         helpNumber.GetComponent<SpriteRenderer>().sprite = helpNumber2;
 
-        objectsToToss[0].gameObject.transform.position = new Vector3(-4f, 1f, 0);
-        objectsToToss[1].gameObject.transform.position = new Vector3(-4f, -1f, 0);
+        objectsToToss[0].gameObject.transform.position = new Vector3(-4f, 1.5f, 0);
+        objectsToToss[1].gameObject.transform.position = new Vector3(-4f, -1.5f, 0);
+        objectsToToss[0].gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        objectsToToss[1].gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         objectsToToss[0].SetActive(true);
         objectsToToss[1].SetActive(true);
         objectsToToss[2].SetActive(false);
@@ -435,6 +442,10 @@ public class DestroyTrash : MonoBehaviour
         circle1 = false;
         circle2 = false;
         circle3 = false;
+        camera.GetComponent<GrabTrash>().circle1Hit = false;
+        camera.GetComponent<GrabTrash>().circle2Hit = false;
+        camera.GetComponent<GrabTrash>().circle3Hit = false;
+        camera.GetComponent<GrabTrash>().dragging = false;
         gamePaused = false;
         if (playHelpSound)
         {
@@ -476,9 +487,12 @@ public class DestroyTrash : MonoBehaviour
         helpHand.GetComponent<SpriteRenderer>().sprite = helpHand3;
         helpNumber.GetComponent<SpriteRenderer>().sprite = helpNumber3;
 
-        objectsToToss[0].gameObject.transform.position = new Vector3(-4f, 2f, 0);
+        objectsToToss[0].gameObject.transform.position = new Vector3(-4f, 3f, 0);
         objectsToToss[1].gameObject.transform.position = new Vector3(-4f, 0f, 0);
-        objectsToToss[2].gameObject.transform.position = new Vector3(-4f, -2f, 0);
+        objectsToToss[2].gameObject.transform.position = new Vector3(-4f, -3f, 0);
+        objectsToToss[0].gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        objectsToToss[1].gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        objectsToToss[2].gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         objectsToToss[0].SetActive(true);
         objectsToToss[1].SetActive(true);
         objectsToToss[2].SetActive(true);
@@ -488,6 +502,10 @@ public class DestroyTrash : MonoBehaviour
         circle1 = false;
         circle2 = false;
         circle3 = false;
+        camera.GetComponent<GrabTrash>().circle1Hit = false;
+        camera.GetComponent<GrabTrash>().circle2Hit = false;
+        camera.GetComponent<GrabTrash>().circle3Hit = false;
+        camera.GetComponent<GrabTrash>().dragging = false;
         gamePaused = false;
         if (playHelpSound)
         {

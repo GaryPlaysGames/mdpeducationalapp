@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/_Scenes/Opening Cut Scene/CutScene1.unity
+- path: Assets/_Scenes/Mini Game 3.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
